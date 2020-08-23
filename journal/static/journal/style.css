@@ -30,6 +30,11 @@ h2 {
     color: #828282;
 }
 
+.date p {
+    font-family: 'Roboto';
+    font-size: 11pt;
+}
+
 .save {
     float: right;
 }
@@ -71,7 +76,8 @@ h2 {
 }
 
 p {
-    font-family: 'Roboto'
+    font-family: 'Roboto';
+    font-size: 13pt;
 }
 
 .logout, .logout:visited, .logout:hover{
