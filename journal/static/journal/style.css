@@ -10,6 +10,7 @@
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 24pt;
+    font-family: 'Ubuntu';
     text-decoration: none;
 }
 
@@ -18,7 +19,11 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Ubuntu';
+    font-family: 'Noto Sans';
+}
+
+h2 {
+    font-size: 20pt;
 }
 
 .date {
@@ -35,7 +40,7 @@ h1, h2, h3, h4 {
 
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
-    font-family: 'Ubuntu';
+    font-family: 'Noto Sans KR';
     float: right;
     font-size: 14pt;
     margin-right: 20px;
@@ -71,7 +76,7 @@ p {
 
 .logout, .logout:visited, .logout:hover{
     color: #cce2f3be;
-    font-family: 'Ubuntu';
+    font-family: 'Noto Sans KR';
     font-size: 12pt;
     text-decoration: none;
 }
