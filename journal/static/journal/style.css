@@ -1,6 +1,6 @@
 .page-header {
     background-color: #12139B;
-    margin-top: 0px;
+    margin-top: -10px;
     padding-top: 5px;
     padding-right: 20px;
     padding-bottom: 5px;
@@ -35,13 +35,30 @@ h1, h2, h3, h4 {
 
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
+    font-family: 'Ubuntu';
+    float: right;
+    font-size: 14pt;
+    margin-right: 20px;
+    margin-top: 25px;
+}
+
+.top-menu-icon, .top-menu-icon:hover, .top-menu-icon:visited {
+    color: #ffffff;
     float: right;
     font-size: 26pt;
     margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 15px;
 }
 
 .post {
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+    border: 0.5px solid #858585;
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .post h2 a, .post h2 a:visited {
@@ -50,4 +67,19 @@ h1, h2, h3, h4 {
 
 p {
     font-family: 'Roboto'
+}
+
+.logout, .logout:visited, .logout:hover{
+    color: #cce2f3be;
+    font-family: 'Ubuntu';
+    font-size: 12pt;
+    text-decoration: none;
+}
+
+.login-form {
+    margin-top: 40px;
+}
+
+td {
+    padding: 5px;
 }
