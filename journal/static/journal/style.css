@@ -49,16 +49,16 @@ h2 {
     float: right;
     font-size: 14pt;
     margin-right: 20px;
-    margin-top: 25px;
+    margin-top: 23px;
 }
 
 .top-menu-icon, .top-menu-icon:hover, .top-menu-icon:visited {
     color: #ffffff;
     float: right;
-    font-size: 26pt;
+    font-size: 24pt;
     margin-right: 20px;
-    margin-left: 20px;
-    margin-top: 15px;
+    margin-left: 0px;
+    margin-top: 18px;
 }
 
 .post {
@@ -87,10 +87,40 @@ p {
     text-decoration: none;
 }
 
+.signup, .signup:visited, .signup:hover{
+    color: #ffffff;
+    font-family: 'Noto Sans KR';
+    font-size: 14pt;
+    text-decoration: none;
+}
+
 .login-form {
-    margin-top: 40px;
+    margin-top: 20px;
+    font-family: 'Noto Sans';
 }
 
 td {
     padding: 5px;
+}
+
+.signup-form {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.signup-text {
+    font-size: 12pt;
+    font-family: 'Noto Sans';
+}
+
+.help-text {
+    font-family: 'Noto Sans';
+    font-size: 11pt;
+    color: rgb(54, 136, 168);
+}
+
+.signup-error {
+    font-family: 'Noto Sans';
+    font-size: 11pt;
+    color: #d10f0f;
 }
