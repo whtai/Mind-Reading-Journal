@@ -6,7 +6,10 @@ from .models import Post
 from .forms import PostForm
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    if request.user.is_authenticated:
+        posts = Post.objects.filter(author__exact=request.user, published_date__lte=timezone.now()).order_by('-published_date')
+    else:
+        posts = Post.objects.filter(author__username__exact='guest', published_date__lte=timezone.now()).order_by('-published_date')
     return render(request, 'journal/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
