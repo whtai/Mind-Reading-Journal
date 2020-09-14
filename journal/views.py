@@ -24,7 +24,7 @@ def post_new(request):
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
-            post.get_sentiment_score()
+            post.calculate_sentiment_score()
             post.save()
             return redirect('journal:post_detail', pk=post.pk)
     else:
@@ -40,7 +40,7 @@ def post_edit(request, pk):
             post = form.save(commit=False)
             post.author = request.user
             post.published_date = timezone.now()
-            post.get_sentiment_score()
+            post.calculate_sentiment_score()
             post.save()
             return redirect('journal:post_detail', pk=post.pk)
     else:

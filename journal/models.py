@@ -15,13 +15,9 @@ class Post(models.Model):
     senti_score = models.FloatField(blank=True, null=True)
     senti_magnitude = models.FloatField(blank=True, null=True)
 
-    def get_sentiment_score(self):
-        self.senti_score, self.senti_magnitude = analyze_sentiment(self.text)
-        self.save()
-
     def classify_sentiment(self):
         if self.senti_score is None:
-            self.get_sentiment_score()
+            self.calculate_sentiment_score()
 
         if self.senti_score > 0.15 :
             return 'Positive'
@@ -32,6 +28,10 @@ class Post(models.Model):
         else:
             return 'Mixed'
 
+    def calculate_sentiment_score(self):
+        self.senti_score, self.senti_magnitude = analyze_sentiment(self.text)
+        self.save()
+        
     def publish(self):
         self.published_date = timezone.now()
         self.save()
