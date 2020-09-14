@@ -3,6 +3,8 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+from .sentiment import analyze_sentiment
+
 # Create your models here.
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -10,6 +12,25 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    senti_score = models.FloatField(blank=True, null=True)
+    senti_magnitude = models.FloatField(blank=True, null=True)
+
+    def get_sentiment_score(self):
+        self.senti_score, self.senti_magnitude = analyze_sentiment(self.text)
+        self.save()
+
+    def classify_sentiment(self):
+        if self.senti_score is None:
+            self.get_sentiment_score()
+
+        if self.senti_score > 0.15 :
+            return 'Positive'
+        elif self.senti_score < -0.15 :
+            return 'Negative'
+        elif self.senti_magnitude < 0.1 :
+            return 'Neutral'
+        else:
+            return 'Mixed'
 
     def publish(self):
         self.published_date = timezone.now()
