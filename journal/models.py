@@ -16,7 +16,7 @@ class Post(models.Model):
     senti_magnitude = models.FloatField(blank=True, null=True)
 
     def classify_sentiment(self):
-        if self.senti_score is None:
+        if self.senti_score is None or self.senti_magnitude is None:
             self.calculate_sentiment_score()
 
         if self.senti_score > 0.15 :
